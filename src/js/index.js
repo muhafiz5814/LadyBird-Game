@@ -12,23 +12,23 @@ let yPos = 0
 let rotate = 0
 
 upBtn.addEventListener("click", () => {
-    if(xPos > 0) xPos -= 10
-    bug.style.top = `${xPos}px`
+    if(yPos > 0) yPos -= 10
+    bug.style.top = `${yPos}px`
 })
 
 downBtn.addEventListener("click", () => {
-    if(xPos < 450) xPos += 10
-    bug.style.top = `${xPos}px`
+    if(yPos < 450) yPos += 10
+    bug.style.top = `${yPos}px`
 })
 
 rightBtn.addEventListener("click", () => {
-    if(yPos < 450) yPos += 10
-    bug.style.left = `${yPos}px`
+    if(xPos < 450) xPos += 10
+    bug.style.left = `${xPos}px`
 })
 
 leftBtn.addEventListener("click", () => {
-    if(yPos > 0) yPos -= 10
-    bug.style.left = `${yPos}px`
+    if(xPos > 0) xPos -= 10
+    bug.style.left = `${xPos}px`
 })
 
 turnClockwiseBtn.addEventListener("click", () => {
@@ -38,5 +38,14 @@ turnClockwiseBtn.addEventListener("click", () => {
 
 turnAntiClockwiseBtn.addEventListener("click", () => {
     rotate -= 90
+    bug.style.transform = `rotate(${rotate}deg)`
+})
+
+homeBtn.addEventListener("click", () => {
+    xPos = 0
+    yPos = 0
+    rotate = 0
+    bug.style.top = `${yPos}px`
+    bug.style.left = `${xPos}px`
     bug.style.transform = `rotate(${rotate}deg)`
 })
