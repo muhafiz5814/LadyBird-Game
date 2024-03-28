@@ -16,12 +16,12 @@ upBtn.addEventListener("click", () => {
 })
 
 downBtn.addEventListener("click", () => {
-    if(xPos < 500) xPos += 10
+    if(xPos < 450) xPos += 10
     bug.style.top = `${xPos}px`
 })
 
 rightBtn.addEventListener("click", () => {
-    if(yPos < 500) yPos += 10
+    if(yPos < 450) yPos += 10
     bug.style.left = `${yPos}px`
 })
 
