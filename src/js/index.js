@@ -9,6 +9,7 @@ const turnAntiClockwiseBtn = document.querySelector('#turnAntiClockWise');
 
 let xPos = 0
 let yPos = 0
+let rotate = 0
 
 upBtn.addEventListener("click", () => {
     if(xPos > 0) xPos -= 10
@@ -28,4 +29,14 @@ rightBtn.addEventListener("click", () => {
 leftBtn.addEventListener("click", () => {
     if(yPos > 0) yPos -= 10
     bug.style.left = `${yPos}px`
+})
+
+turnClockwiseBtn.addEventListener("click", () => {
+    rotate += 90
+    bug.style.transform = `rotate(${rotate}deg)`
+})
+
+turnAntiClockwiseBtn.addEventListener("click", () => {
+    rotate -= 90
+    bug.style.transform = `rotate(${rotate}deg)`
 })
