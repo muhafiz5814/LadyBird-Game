@@ -11,34 +11,40 @@ let xPos = 0
 let yPos = 0
 let rotate = 0
 
+const setTransforms = () => {
+    bug.style.left = `${xPos}px`
+    bug.style.top = `${yPos}px`
+    bug.style.transform = `rotate(${rotate}deg)`
+}
+
 const upShift = () => {
     if(yPos > 0) yPos -= 10
-    bug.style.top = `${yPos}px`
+    setTransforms()
 }
 
 const downShift = () => {
     if(yPos < 450) yPos += 10
-    bug.style.top = `${yPos}px`
+    setTransforms()
 }
 
 const leftShift = () => {
     if(xPos > 0) xPos -= 10
-    bug.style.left = `${xPos}px`
+    setTransforms()
 }
 
 const rightShift = () => {
     if(xPos < 450) xPos += 10
-    bug.style.left = `${xPos}px`
+    setTransforms()
 }
 
 const rotateClockwise = () => {
     rotate += 90
-    bug.style.transform = `rotate(${rotate}deg)`
+    setTransforms()
 }
 
 const rotateAntiClockwise = () => {
     rotate -= 90
-    bug.style.transform = `rotate(${rotate}deg)`
+    setTransforms()
 }
 
 upBtn.addEventListener("click", upShift)
@@ -57,7 +63,5 @@ homeBtn.addEventListener("click", () => {
     xPos = 0
     yPos = 0
     rotate = 0
-    bug.style.top = `${yPos}px`
-    bug.style.left = `${xPos}px`
-    bug.style.transform = `rotate(${rotate}deg)`
+    setTransforms()
 })
