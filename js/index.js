@@ -65,3 +65,35 @@ homeBtn.addEventListener("click", () => {
     rotation = 0
     setTransforms()
 })
+
+// Add Keyboard event listener
+document.addEventListener("keydown", (event) => {
+    // console.log(event)
+    switch(event.key){
+        case "ArrowUp":
+            upShift();
+            break;
+        case "ArrowDown":
+            downShift();
+            break;
+        case "ArrowLeft":
+            leftShift();
+            break;
+        case "ArrowRight":
+            rightShift();
+            break;
+        case "]":
+            rotateClockwise();
+            break;
+        case "[":
+            rotateAntiClockwise();
+            break;
+        case "h":
+        case "H":
+            xPos = 0
+            yPos = 0
+            rotation = 0
+            setTransforms()
+            break;
+        }
+})
